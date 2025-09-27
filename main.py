@@ -5,7 +5,7 @@ from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import declarative_base, sessionmaker
 
 # Ajusta tu cadena de conexión (sin tildes/ñ) o usa URL encoding
-DATABASE_URL = "postgresql://postgres:uPxBHn]Ag9H~N4'K@20.84.99.214:443/mm100721"
+DATABASE_URL = "postgresql://omarmtnz:9ByOEJ5Jc7jEIDJH1ZewApueTK6ragtr@dpg-d3be7nodl3ps739an4p0-a/mm100721_g8lt"
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
