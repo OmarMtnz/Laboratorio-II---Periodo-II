@@ -6,7 +6,8 @@ data class EstudianteResponse(
     val nombre: String,
     val edad: Int,
     val correo: String,
-    val carnet: String
+    val carnet: String,
+    val pic_url: String?
 )
 
 // Lo que envías al crear/actualizar
@@ -14,7 +15,8 @@ data class EstudiantePayload(
     val nombre: String,
     val edad: Int,
     val correo: String,
-    val carnet: String
+    val carnet: String,
+    val pic_url: String?
 )
 
 // Envoltorio que usa tu API para POST/PUT/DELETE

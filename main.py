@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException, Path
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr
+from typing import Optional
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import declarative_base, sessionmaker
 
@@ -19,6 +20,7 @@ class Estudiante(Base):
     edad = Column(Integer, nullable=False)
     correo = Column(String(120), nullable=False, unique=True, index=True)
     carnet = Column(String(20), nullable=False, unique=True, index=True)
+    pic_url = Column(String(500), nullable=True, index=True)
 
 Base.metadata.create_all(bind=engine)
 
@@ -28,6 +30,7 @@ class EstudianteSchema(BaseModel):
     edad: int
     correo: EmailStr
     carnet: str
+    pic_url: Optional[str] = None
 
 app = FastAPI()
 
@@ -49,7 +52,8 @@ def insertar_estudiante(estudiante: EstudianteSchema):
             nombre=estudiante.nombre,
             edad=estudiante.edad,
             correo=estudiante.correo,
-            carnet=estudiante.carnet
+            carnet=estudiante.carnet,
+            pic_url=estudiante.pic_url,
         )
         db.add(nuevo)
         db.commit()
@@ -82,6 +86,11 @@ def actualizar_estudiante(
         est.edad = estudiante.edad
         est.correo = estudiante.correo
         est.carnet = estudiante.carnet
+        est.pic_url = estudiante.pic_url
+
+        if estudiante.pic_url is not None:
+            est.pic_url = estudiante.pic_url
+
         db.commit()
         db.refresh(est)
         return {
@@ -91,7 +100,8 @@ def actualizar_estudiante(
                 "nombre": est.nombre,
                 "edad": est.edad,
                 "correo": est.correo,
-                "carnet": est.carnet
+                "carnet": est.carnet,
+                "pic_url": est.pic_url,
             }
         }
     finally:

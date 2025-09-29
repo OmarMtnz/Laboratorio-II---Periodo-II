@@ -1,7 +1,11 @@
+import org.gradle.kotlin.dsl.implementation
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.gms.google-services")
+
 }
 
 android {
@@ -68,8 +72,14 @@ dependencies {
         // OkHttp3
         implementation ("com.squareup.okhttp3:okhttp:4.11.0")
         implementation ("com.squareup.okhttp3:logging-interceptor:4.11.0") // Para logs de las peticiones HTTP
-
-
-        // Opcional: Si usas Coroutines para peticiones asíncronas
         implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
+        // Firebase BOM
+        implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+        implementation("com.google.firebase:firebase-storage-ktx")
+
+        // Preview de imágenes desde URL (pic_url)
+        implementation("io.coil-kt:coil-compose:2.6.0")
+
+
     }

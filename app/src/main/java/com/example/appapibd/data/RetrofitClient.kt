@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitClient {
         // Emulador: 10.0.2.2 -> localhost del host
 
-        private const val BASE_URL = "https://laboratorio-ii-periodo-ii.onrender.com"
+        private const val BASE_URL = "https://laboratorio-ii-periodo-ii.onrender.com/"
 
         // Si usas dispositivo físico:
         //private const val BASE_URL = "http://192.168.1.2:8000/"
