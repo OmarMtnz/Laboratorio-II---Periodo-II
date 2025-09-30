@@ -137,9 +137,9 @@ class EstudiantesViewModel(
             _uiState.value = _uiState.value.copy(loading = true, error = null, info = null)
             try {
                 if (pickedUri != null) {
-                    // 1) sube y obtiene URL
+                    // sube y obtiene URL
                     val url = FirebaseUploader.uploadAndGetUrl(pickedUri, resolver, "estudiantes")
-                    // 2) actualiza incluyendo pic_url
+                    // actualiza incluyendo pic_url
                     repo.updateWithPic(id, nombre, edad, correo, carnet, url)
                     _uiState.value = _uiState.value.copy(picUrl = url) // opcional: reflejar en UI
                 } else {

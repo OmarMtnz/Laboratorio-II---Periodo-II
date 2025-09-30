@@ -81,5 +81,10 @@ dependencies {
         // Preview de imágenes desde URL (pic_url)
         implementation("io.coil-kt:coil-compose:2.6.0")
 
+        implementation("androidx.core:core-splashscreen:1.0.0")
+
+        implementation("androidx.core:core-splashscreen:1.0.1")
+
+
 
     }

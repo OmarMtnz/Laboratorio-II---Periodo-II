@@ -16,6 +16,7 @@ class MainActivity : ComponentActivity() {
                     EstudiantesScreen()
                 }
             }
+            window.setBackgroundDrawable(null)
         }
     }
 }
