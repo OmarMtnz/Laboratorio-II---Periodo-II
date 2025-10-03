@@ -1,0 +1,17 @@
+Host: dpg-d3be7nodl3ps739an4p0-a.oregon-postgres.render.com
+Database: mm100721_g8lt
+Port: 5432
+usuario: omarmtnz
+Contraseña: 9ByOEJ5Jc7jEIDJH1ZewApueTK6ragtr
+
+
+
+-------------------------------------------------------------
+
+API: https://laboratorio-ii-periodo-ii.onrender.com
+
+-----------------------------------------------------------------------------
+
+Storage: gs://omarmartinez26.firebasestorage.app/estudiantes
+
+
